@@ -6,14 +6,18 @@
 *{
   font-family: 'Poppins';
 }
+
+body{
+  overflow: overlay;
+}
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background:#2e0249;
+  background:transparent;
   border-radius: 0px;
 }
  
