@@ -13,7 +13,7 @@ function Notes() {
   };
 
   return (
-    <span className={`${!visible && 'hidden' }`}>
+    <div className={`${!visible && 'hidden' }`}>
       {visible && (
         <div className="bg-[#fff8df] h-fit w-fit px-4 py-2 rounded ">
           <button className="w-fit" onClick={removeElement}>
@@ -41,7 +41,7 @@ function Notes() {
           </div>
         </div>
       )}
-    </span>
+    </div>
   );
 }
 
