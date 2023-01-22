@@ -13,16 +13,16 @@ function Notes() {
   };
 
   return (
-    <span>
+    <span className={`${!visible && 'hidden' }`}>
       {visible && (
-        <div className="bg-[#fff8df] h-fit w-fit px-4 py-2 rounded">
+        <div className="bg-[#fff8df] h-fit w-fit px-4 py-2 rounded ">
           <button className="w-fit" onClick={removeElement}>
             <ion-icon name="close"></ion-icon>
           </button>
           <textarea
-            className={` bg-[#fff8df] block w-80 font-medium h-72 overflow-hidden resize-y min-h-[40px] p-2 focus:outline-none ${
+            className={`bg-[#fff8df] block w-80 font-medium h-72 overflow-hidden resize-y min-h-[40px] p-2 focus:outline-none ${
               checked && "line-through text-red-500"
-            }  `}
+            }`}
             role="textbox"
             placeholder="Take notes here"
             disabled={checked}
