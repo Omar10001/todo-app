@@ -3,7 +3,7 @@ import { Dropdown } from "flowbite-react";
 import { DropdownItem } from "flowbite-react/lib/esm/components/Dropdown/DropdownItem";
 
 function Notes({ task, deleteTask, toggleTask }) {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(task.checked);
 
   const checkBtn = () => {
     setChecked((check) => !check);
@@ -61,7 +61,7 @@ function Notes({ task, deleteTask, toggleTask }) {
                 Done
               </span>
             </div>
-            <div className={`w-5 h-5 rounded-full bg-[${task.cat}]`}></div>
+            <div className={`w-5 h-5 rounded-full bg-[${task.color}]`}></div>
           </div>
         </div>
       </div>

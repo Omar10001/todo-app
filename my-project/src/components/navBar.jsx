@@ -17,6 +17,10 @@ function NavBar({ category, setTasks, filterItem }) {
             </button>
           );
         })}
+        <div className="hidden bg-[#d3cefe]"></div>
+        <div className="hidden bg-[#d1e4f6]"></div>
+        <div className="hidden bg-[#ffcece]"></div>
+        <div className="hidden bg-[#dbf3d6]"></div>
         <button onClick={() => setTasks(tasks)}>
           <span className="flex gap-3 items-center capitalize">
             <div className={`rounded-full bg-[#000000] h-8 w-8`}></div>
