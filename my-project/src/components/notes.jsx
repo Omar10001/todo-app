@@ -10,13 +10,12 @@ function Notes({ task, deleteTask, toggleTask }) {
     toggleTask(task.id);
   };
 
-  // const removeElement = () => {
-  //   setVisible((prev) => !prev);
-  // };
-
   return (
     <div>
-      <div className="bg-[#fff8df] flex flex-col h-fit w-fit px-4 py-2 rounded ">
+      <div className="hidden animate__animated animate__bounceOut "></div>
+      <div
+        className={`bg-[#fff8df] flex flex-col h-fit w-fit px-4 py-2 rounded animate__animated animate__jackInTheBox `}
+      >
         <div className="bg-[#fff8df] flex h-fit w-full gap-4 justify-between items-center">
           <span
             className={`font-semibold text-xl ${
@@ -25,11 +24,12 @@ function Notes({ task, deleteTask, toggleTask }) {
           >
             {task.name}
           </span>
-          <Dropdown inline={true}>
+          <Dropdown placement="left" inline={true}>
             <DropdownItem>
               <span onClick={() => deleteTask(task.id)}>Delete</span>
             </DropdownItem>
             <DropdownItem>
+              Edit Soon
               {/* <span
                 onClick={() => {
                   handleClickOpenEdit;
@@ -56,7 +56,7 @@ function Notes({ task, deleteTask, toggleTask }) {
                 type="checkbox"
                 value="Done"
                 onClick={checkBtn}
-                checked={checked}
+                defaultChecked={checked}
               />
               <span className="text-base text-blue-500 mt-0.5 font-regular ">
                 Done

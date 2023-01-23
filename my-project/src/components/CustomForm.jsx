@@ -24,7 +24,7 @@ function CustomForm({ addTask, handleClose, category }) {
   return (
     <form
       onSubmit={handleFormSubmit}
-      className="w-[500px] h-[400px] py-2 px-10 flex justify-center items-center  "
+      className="w-[500px] h-[400px] py-2 px-10 flex justify-center items-center animate__animated animate__fadeIn  "
     >
       <div className="flex flex-col w-full gap-14">
         <span className="font-semibold text-center text-2xl">Add Task</span>
@@ -55,7 +55,7 @@ function CustomForm({ addTask, handleClose, category }) {
             placeholder="Details"
           />
           <select name="cat" onChange={(e) => setTaskCat(e.target.value)}>
-            <option value="None" disabled>
+            <option value="None">
               None
             </option>
             {category.map((caty) => {
