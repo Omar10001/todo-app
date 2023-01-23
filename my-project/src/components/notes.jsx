@@ -12,9 +12,8 @@ function Notes({ task, deleteTask, toggleTask }) {
 
   return (
     <div>
-      <div className="hidden animate__animated animate__bounceOut "></div>
       <div
-        className={`bg-[#fff8df] flex flex-col h-fit w-fit px-4 py-2 rounded animate__animated animate__fadeInDown animate__faster`}
+        className={`bg-[#fff8df] flex flex-col h-fit w-fit px-4 py-2 rounded animate__animated animate__fadeInDown animate__faster transition-all duration-300 overflow-hidden`}
       >
         <div className="bg-[#fff8df] flex h-fit w-full gap-4 justify-between items-center">
           <span
@@ -42,7 +41,7 @@ function Notes({ task, deleteTask, toggleTask }) {
           </Dropdown>
         </div>
         <span
-          className={`bg-[#fff8df] inline-block w-80  min-h-[40px] px-1 py-2 focus:outline-none ${
+          className={`bg-[#fff8df] inline-block w-80 min-h-[40px] px-1 py-2 focus:outline-none ${
             checked && "line-through text-red-400"
           }`}
         >
