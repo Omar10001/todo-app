@@ -41,7 +41,7 @@ function Notes({ task, deleteTask, toggleTask }) {
           </Dropdown>
         </div>
         <span
-          className={`bg-[#fff8df] inline-block w-80 min-h-[40px] px-1 py-2 focus:outline-none ${
+          className={`bg-[#fff8df] inline-block font-light w-80 min-h-[40px] px-1 py-2 focus:outline-none ${
             checked && "line-through text-red-400"
           }`}
         >
