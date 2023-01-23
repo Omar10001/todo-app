@@ -1,4 +1,5 @@
 import React from "react";
+import TaskImg from '../../../my-project/src/assets/task_img.png'
 
 function NavBar({ category, setTasks, filterItem }) {
   return (
@@ -28,7 +29,7 @@ function NavBar({ category, setTasks, filterItem }) {
           </span>
         </button>
       </div>
-      <img className="w-40 flex" src="./src/assets/task_img.png" alt="" />
+      <img className="w-40 flex" src={TaskImg} alt="" />
     </div>
   );
 }
