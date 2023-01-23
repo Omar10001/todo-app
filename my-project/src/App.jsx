@@ -10,8 +10,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import Dialog from "@mui/material/Dialog";
 
 function App() {
-
-  const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
+  const [tasks, setTasks] = useLocalStorage("react-todo.tasks", []);
   const [open, setOpen] = useState(false);
 
   const addTask = (tasky) => {
@@ -93,7 +92,11 @@ function App() {
             <ion-icon name="add"></ion-icon>
           </button>
         </div>
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          className="bg-transparent/40 backdrop-blur-sm transition-all duration-150"
+        >
           <CustomForm
             category={category}
             addTask={addTask}

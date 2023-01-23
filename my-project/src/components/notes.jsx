@@ -14,7 +14,7 @@ function Notes({ task, deleteTask, toggleTask }) {
     <div>
       <div className="hidden animate__animated animate__bounceOut "></div>
       <div
-        className={`bg-[#fff8df] flex flex-col h-fit w-fit px-4 py-2 rounded animate__animated animate__jackInTheBox `}
+        className={`bg-[#fff8df] flex flex-col h-fit w-fit px-4 py-2 rounded animate__animated animate__fadeInDown animate__faster`}
       >
         <div className="bg-[#fff8df] flex h-fit w-full gap-4 justify-between items-center">
           <span
@@ -25,8 +25,8 @@ function Notes({ task, deleteTask, toggleTask }) {
             {task.name}
           </span>
           <Dropdown placement="left" inline={true}>
-            <DropdownItem>
-              <span onClick={() => deleteTask(task.id)}>Delete</span>
+            <DropdownItem onClick={() => deleteTask(task.id)}>
+              <span>Delete</span>
             </DropdownItem>
             <DropdownItem>
               Edit Soon
