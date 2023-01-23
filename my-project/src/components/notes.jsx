@@ -56,6 +56,7 @@ function Notes({ task, deleteTask, toggleTask }) {
                 type="checkbox"
                 value="Done"
                 onClick={checkBtn}
+                checked={checked}
               />
               <span className="text-base text-blue-500 mt-0.5 font-regular ">
                 Done
