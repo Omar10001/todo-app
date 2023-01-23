@@ -1,26 +1,121 @@
 import { useState } from "react";
+
 import NavBar from "./components/navBar";
 import Notes from "./components/notes";
+import CustomForm from "./components/CustomForm";
+
+import useLocalStorage from "./hooks/useLocalStorage";
+// import EditForm from "./components/EditForm";
+
+import Dialog from "@mui/material/Dialog";
 
 function App() {
-  const [inputList, setInputList] = useState([]);
 
-  const onAddBtnClick = () => {
-    setInputList(inputList.concat(<Notes />));
+  const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
+  const [open, setOpen] = useState(false);
+
+  const addTask = (tasky) => {
+    setTasks((prev) => [...prev, tasky]);
+    console.log(tasky);
+  };
+
+  const deleteTask = (id) => {
+    setTasks((prev) => prev.filter((t) => t.id !== id));
+  };
+
+  const toggleTask = (id) => {
+    setTasks((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, checked: !t.checked } : t))
+    );
+  };
+
+  // const updateTask = (editedTask) => {
+  //   setTasks((prev) =>
+  //     prev.map((t) =>
+  //       t.id === editedTask.id
+  //         ? {
+  //             ...t,
+  //             name: editedTask.name,
+  //             desc: editedTask.desc,
+  //             cat: editedTask.cat,
+  //           }
+  //         : t
+  //     )
+  //   );
+  //   //TODO: CLASS THE EDIT MODE
+  // };
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const category = [
+    {
+      id: 1,
+      cat: "Work",
+      color: "#d3cefe",
+    },
+    {
+      id: 2,
+      cat: "Study",
+      color: "#d1e4f6",
+    },
+    {
+      id: 3,
+      cat: "entertainment",
+      color: "#ffcece",
+    },
+    {
+      id: 4,
+      cat: "family",
+      color: "#dbf3d6",
+    },
+  ];
+
+  const filterItem = (curcat) => {
+    const newItem = tasks.filter((newVal) => {
+      return newVal.color === curcat.color;
+    });
+    console.log(newItem);
+    setTasks(newItem);
   };
 
   return (
     <div className="App w-full h-full flex gap-9">
-      <NavBar />
+      <NavBar filterItem={filterItem} setTasks={setTasks} category={category} />
       <div className="bg-[#fffefe] min-h-screen h-full w-full flex flex-col  ">
         <div className="w-full flex justify-end items-center text-4xl p-9 ">
-          <button className="w-fit" onClick={onAddBtnClick}>
+          <button onClick={handleClickOpen} className="w-fit">
             <ion-icon name="add"></ion-icon>
           </button>
         </div>
-        <div className="w-full flex flex-wrap gap-3">
-          {inputList}
-        </div>
+        <Dialog open={open} onClose={handleClose}>
+          <CustomForm
+            category={category}
+            addTask={addTask}
+            handleClose={handleClose}
+          />
+        </Dialog>
+
+        {/* TaskLIST */}
+        {tasks && (
+          <div className="flex flex-wrap h-full w-full gap-3">
+            {tasks
+              .sort((a, b) => b.id - a.id)
+              .map((task) => (
+                <Notes
+                  key={task.id}
+                  task={task}
+                  deleteTask={deleteTask}
+                  toggleTask={toggleTask}
+                />
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );

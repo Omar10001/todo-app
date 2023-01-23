@@ -5,6 +5,7 @@ module.exports = {
     "./src/App.jsx",
     "./src/components/navBar.jsx",
     "./src/components/notes.jsx",
+    './src/components/CustomForm.jsx',
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
