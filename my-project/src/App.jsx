@@ -87,7 +87,7 @@ function App() {
     <div className="App w-full h-full flex gap-9">
       <NavBar filterItem={filterItem} setTasks={setTasks} category={category} />
       <div className="bg-[#fffefe] min-h-screen h-full w-full flex flex-col  ">
-        <div className="w-full flex justify-end items-center text-4xl p-9 ">
+        <div className="w-full flex justify-end items-center text-4xl md:p-9 px-9 pb-6 pt-9 ">
           <button onClick={handleClickOpen} className="w-fit">
             <ion-icon name="add"></ion-icon>
           </button>
@@ -106,7 +106,7 @@ function App() {
 
         {/* TaskLIST */}
         {tasks && (
-          <div className="flex flex-wrap h-full w-full gap-3">
+          <div className="flex flex-wrap h-full w-full gap-2 md:gap-3">
             {tasks
               .sort((a, b) => b.id - a.id)
               .map((task) => (

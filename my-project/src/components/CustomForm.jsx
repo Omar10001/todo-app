@@ -24,9 +24,9 @@ function CustomForm({ addTask, handleClose, category }) {
   return (
     <form
       onSubmit={handleFormSubmit}
-      className="w-[500px] h-[400px] py-2 px-10 flex justify-center items-center animate__animated animate__fadeIn  "
+      className="md:w-[500px] md:h-[400px] p-8 md:py-2 md:px-10 flex justify-center items-center animate__animated animate__fadeIn  "
     >
-      <div className="flex flex-col w-full gap-14">
+      <div className="flex flex-col justify-center items-center w-40 md:w-full gap-14">
         <span className="font-semibold text-center text-2xl">Add Task</span>
         <div className="flex flex-col gap-2 ">
           <TextField
@@ -34,7 +34,7 @@ function CustomForm({ addTask, handleClose, category }) {
             type="text"
             name="input task"
             id="task"
-            className="w-full"
+            className=" w-auto md:w-full"
             value={task}
             onChange={(e) => setTask(e.target.value)}
             required
@@ -47,14 +47,14 @@ function CustomForm({ addTask, handleClose, category }) {
             type="text"
             name="input task"
             id="task"
-            className="w-full"
+            className="w-auto md:w-full"
             value={taskDesc}
             onChange={(e) => setTaskDesc(e.target.value)}
             required
             maxLength={120}
             placeholder="Details"
           />
-          <select name="cat" onChange={(e) => setTaskCat(e.target.value)}>
+          <select className="w-auto" name="cat" onChange={(e) => setTaskCat(e.target.value)}>
             <option value="None">
               None
             </option>
@@ -70,7 +70,7 @@ function CustomForm({ addTask, handleClose, category }) {
           </select>
           <button
             onClick={handleClose}
-            className=" border border-blue-300 text-blue-500 rounded p-2 w-full text-center hover:bg-blue-500 hover:text-white transition-colors duration-200"
+            className=" border border-blue-300 text-blue-500 rounded p-2 w-full mx-auto md:w-full text-center hover:bg-blue-500 hover:text-white transition-colors duration-200"
           >
             Add
           </button>
