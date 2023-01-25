@@ -17,7 +17,7 @@ function Notes({ task, deleteTask, toggleTask }) {
       >
         <div className="bg-[#fff8df] flex h-fit w-full gap-4 justify-between items-center">
           <span
-            className={`font-semibold text-base md:text-xl ${
+            className={`font-semibold text-base md:text-xl w-28 md:w-fit ${
               checked && "line-through text-red-500"
             }`}
           >
