@@ -3,7 +3,7 @@ import TaskImg from '../../../my-project/src/assets/task_img.png'
 
 function NavBar({ category, setTasks, filterItem }) {
   return (
-    <div className="bg-[#fffefe] fixed flex flex-col items-center w-fit md:w-72 min-h-screen  justify-between text-lg py-9 border-x pl-5 pr-2 md:px-0 ">
+    <div className="bg-[#fffefe] fixed flex flex-col items-center w-fit md:w-72 min-h-screen md:justify-between justify-around text-lg py-9 border-x pl-5 pr-2 md:px-0 ">
       <div className="flex flex-col gap-6 md:gap-9 ">
         <span className="font-semibold text-4xl mb-2">todo</span>
         {category.map((caty) => {
@@ -29,7 +29,7 @@ function NavBar({ category, setTasks, filterItem }) {
           </span>
         </button>
       </div>
-      <img className="w-40 flex" src={TaskImg} alt="" />
+      <img className="md:w-40 w-32 flex " src={TaskImg} alt="" />
     </div>
   );
 }
