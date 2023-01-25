@@ -103,7 +103,7 @@ function App() {
             setTasks={setTasks}
             category={category}
           />
-          <div className="bg-[#fffefe] min-h-screen h-full w-full flex flex-col  ">
+          <div className="bg-[#fffefe] min-h-screen h-full w-full flex flex-col ml-52 md:ml-80  ">
             <div className="w-full flex justify-end items-center text-4xl md:p-9 px-9 pb-6 pt-9 ">
               <button onClick={handleClickOpen} className="w-fit">
                 <ion-icon name="add"></ion-icon>
