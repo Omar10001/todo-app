@@ -3,8 +3,8 @@ import TaskImg from '../../../my-project/src/assets/task_img.png'
 
 function NavBar({ category, setTasks, filterItem }) {
   return (
-    <div className="bg-[#fffefe] flex flex-col items-center w-fit md:w-72 min-h-screen  justify-between text-lg py-9 border pl-5 pr-2 md:px-0 ">
-      <div className="flex flex-col gap-4 md:gap-9 ">
+    <div className="bg-[#fffefe] flex flex-col items-center w-fit md:w-72 min-h-screen  justify-between text-lg py-9 border-x pl-5 pr-2 md:px-0 ">
+      <div className="flex flex-col gap-6 md:gap-9 ">
         <span className="font-semibold text-4xl mb-2">todo</span>
         {category.map((caty) => {
           return (
